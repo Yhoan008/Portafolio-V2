@@ -1,35 +1,34 @@
+import fondo1 from "../assets/fondo1.png"
+import fondo2 from "../assets/fondo2.png"
+
+
 type Project = {
   title: string
   description: string
   tags: string[]
   hrefDemo?: string
   hrefCode?: string
+  image?: string
 }
 
 const PROJECTS: Project[] = [
   {
-    title: "Proyecto 01",
+    title: "Portafolio Profesional",
     description:
-      "Descripción corta del proyecto. Qué problema resuelve, qué hiciste y el resultado.",
-    tags: ["React", "Tailwind", "Node.js"],
-    hrefDemo: "#",
-    hrefCode: "#",
+      "Primeras versiones de mi portafolio aplicando tecnologias como React, Tailwind y haciendo uso de tecnicas de diseño modernas para crear una experiencia visual atractiva y funcional.",
+    tags: ["React", "Tailwind"],
+    hrefDemo: "https://yhoan-dev.netlify.app/",
+    hrefCode: "https://github.com/Yhoan008/resume",
+    image: fondo1,
   },
   {
-    title: "Proyecto 02",
+    title: "Nimbu, aprediendo idiomas",
     description:
-      "Descripción corta del proyecto. Enfócate en impacto, features clave y tech stack.",
-    tags: ["TypeScript", "UI/UX", "API"],
-    hrefDemo: "#",
-    hrefCode: "#",
-  },
-  {
-    title: "Proyecto 03",
-    description:
-      "Descripción corta del proyecto. Puedes mencionar métricas o mejoras de performance.",
-    tags: ["SQL", "Dashboards", "Automation"],
-    hrefDemo: "#",
-    hrefCode: "#",
+      "Una pagina interactiva dedicada a mostrar y promover cursos de ingles, donde los estudiantes puede registrar e ingresar sus usuarios.",
+    tags: ["React", "Tailwind", "Express","Node"],
+    hrefDemo: "https://nimbuproyect.netlify.app/",
+    hrefCode: "https://github.com/Yhoan008/NimbuFront",
+    image: fondo2,
   },
 ]
 
@@ -55,9 +54,13 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-white/10 bg-white/4 backdrop-blur-md transition hover:border-white/15 hover:bg-white/6">
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#10112d]">
-        {/* Placeholder: reemplaza por imagen */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,201,255,0.25),transparent_50%),radial-gradient(circle_at_70%_70%,rgba(231,58,194,0.20),transparent_55%)]" />
-        <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-white/5" />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        ) : null}
       </div>
 
       <div className="p-6">
@@ -80,6 +83,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="mt-5 flex flex-wrap gap-3">
           <a
             href={project.hrefDemo ?? "#"}
+            target="_blank"
             className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-[#bb82ff] to-[#1bc3ff] px-4 py-2 text-sm font-semibold text-black transition hover:scale-[1.02] active:scale-[0.98]"
           >
             Ver demo
@@ -87,6 +91,7 @@ function ProjectCard({ project }: { project: Project }) {
           </a>
           <a
             href={project.hrefCode ?? "#"}
+            target="_blank"
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/10"
           >
             Código
@@ -115,14 +120,6 @@ export default function Proyectos() {
             imágenes cuando quieras.
           </p>
         </div>
-
-        <a
-          href="#"
-          className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 transition hover:border-white/25 hover:bg-white/10"
-        >
-          Ver todos
-          <ArrowUpRight className="h-4 w-4" />
-        </a>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
