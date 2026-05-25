@@ -1,5 +1,7 @@
 import fondo1 from "../assets/fondo1.png"
 import fondo2 from "../assets/fondo2.png"
+import fondo3 from "../assets/fondo3.png"
+import fondo4 from "../assets/fondo4.jpg"
 
 
 type Project = {
@@ -29,6 +31,24 @@ const PROJECTS: Project[] = [
     hrefDemo: "https://nimbuproyect.netlify.app/",
     hrefCode: "https://github.com/Yhoan008/NimbuFront",
     image: fondo2,
+  },
+  {
+    title: "NeoStride, Zapatillas deportivas",
+    description:
+      "Landing page diseñada para la venta de zapatillas deportivas con un diseño moderno y atractivo; Incluye carrito de compras y código de descuento para incentivar las compras.",
+    tags: ["React", "Tailwind"],
+    hrefDemo: "https://neostrid.netlify.app/",
+    hrefCode: "https://github.com/Yhoan008/neostride",
+    image: fondo3,
+  },
+  {
+    title: "Remodela",
+    description:
+      "Una pagina con diseño más simple y directo para una empresa de remodelacion de interiores y construccion.",
+    tags: ["React", "Tailwind"],
+    hrefDemo: "https://remodela.netlify.app/",
+    hrefCode: "https://github.com/Yhoan008/remodela",
+    image: fondo4,
   },
 ]
 
