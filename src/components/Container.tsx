@@ -6,6 +6,7 @@ import Servicios from "./Servicios"
 import Proyectos from "./Proyectos"
 import Contacto from "./Contacto"
 import Footer from "./Footer"
+import Chatbot from "./Chatbot"
 
 export default function Container() {
   return (
@@ -22,7 +23,7 @@ export default function Container() {
         <Footer />
       </main>
 
-
+      <Chatbot />
     </div>
   )
 }
