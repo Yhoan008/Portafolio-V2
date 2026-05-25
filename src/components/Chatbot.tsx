@@ -144,7 +144,7 @@ export default function Chatbot() {
             <DeepChat
               directConnection={{
                 gemini: {
-                  key: "AIzaSyBhRTiy364Grl-G9eFQkajswMZ9_DG-1VU",
+                  key: import.meta.env.VITE_API_GEMINI,
                   system_prompt: comportamiento,
                 },
               }}
